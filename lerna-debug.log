@@ -1,0 +1,16 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '8.1.8',
+0 silly argv   '$0': 'node_modules/lerna/dist/cli.js',
+0 silly argv   name: 'hg-ui'
+0 silly argv }
+1 notice cli v8.1.8
+2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+3 verbose rootPath /Users/tomdavies/Documents/code/personal/hg-monorepo
+4 info versioning independent
+5 error Error: Command failed with exit code 1: git config --get user.email
+5 error     at makeError (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/execa@5.0.0/node_modules/execa/lib/error.js:59:11)
+5 error     at module.exports.sync (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/execa@5.0.0/node_modules/execa/index.js:186:17)
+5 error     at execSync (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/@lerna+create@8.1.8_typescript@5.6.3/node_modules/@lerna/create/dist/command.js:1505:31)
+5 error     at CreateCommand.gitConfig (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/@lerna+create@8.1.8_typescript@5.6.3/node_modules/@lerna/create/dist/command.js:5481:16)
+5 error     at CreateCommand.initialize (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/@lerna+create@8.1.8_typescript@5.6.3/node_modules/@lerna/create/dist/command.js:5415:51)
