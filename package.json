@@ -5,11 +5,13 @@
     "packages/*"
   ],
   "scripts": {
-    "build-ui": "lerna run build --scope=hg-ui",
-    "dev-admin": "lerna run dev --scope=hg-admin"
+    "build-ui": "lerna run build --scope=@hannagrams/ui",
+    "dev-admin": "lerna run dev --scope=@hannagrams/admin"
   },
   "dependencies": {},
   "devDependencies": {
-    "lerna": "^8.1.8"
+    "lerna": "^8.1.8",
+    "eslint": "^8",
+    "typescript": "^5.6.3"
   }
 }
