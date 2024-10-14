@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import Text from "./text";
+import Text from ".";
 
 type StoryProps = ComponentProps<typeof Text>;
 
