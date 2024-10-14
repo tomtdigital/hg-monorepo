@@ -2,8 +2,10 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "build-sb": "lerna run build-storybook",
     "build-ui": "lerna run build --scope @hannagrams/ui",
     "build-admin": "lerna run build --scope @hannagrams/admin",
+    "dev-sb": "lerna run storybook",
     "dev-admin": "lerna run --scope @hannagrams/admin --scope @hannagrams/ui --parallel dev"
   },
   "dependencies": {},
