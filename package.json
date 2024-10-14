@@ -1,11 +1,9 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "build-ui": "lerna run build --scope @hannagrams/ui",
+    "build-admin": "lerna run build --scope @hannagrams/admin",
     "dev-admin": "lerna run --scope @hannagrams/admin --scope @hannagrams/ui --parallel dev"
   },
   "dependencies": {},
