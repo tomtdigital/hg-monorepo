@@ -2,18 +2,17 @@ import React, { PropsWithChildren, ReactElement } from "react";
 
 type TextProps = PropsWithChildren<{
   color: string;
-  duplicate: boolean;
+  fontWeight?: string;
 }>;
 
 export const Text: React.FC<TextProps> = ({
   color,
-  duplicate = false,
+  fontWeight = "normal",
   children,
 }: TextProps): ReactElement => {
   return (
     <>
-      <p style={{ color: color }}>{children}</p>
-      {duplicate && <p style={{ color: color }}>{children}</p>}
+      <p style={{ color: color, fontWeight }}>{children}</p>
     </>
   );
 };

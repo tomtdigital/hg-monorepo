@@ -5,8 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build-ui": "lerna run build --scope=@hannagrams/ui",
-    "dev-admin": "lerna run dev --scope=@hannagrams/admin"
+    "build-ui": "lerna run build --scope @hannagrams/ui",
+    "dev-admin": "lerna run --scope @hannagrams/admin --scope @hannagrams/ui --parallel dev"
   },
   "dependencies": {},
   "devDependencies": {

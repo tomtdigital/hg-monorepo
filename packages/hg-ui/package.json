@@ -8,7 +8,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/**"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "barrelsby -c ./barrelsby.json --delete && tsc -p tsconfig.prod.json"
+    "build": "barrelsby -c ./barrelsby.json --delete && tsc -p tsconfig.prod.json",
+    "dev": "tsc -p tsconfig.prod.json -w"
   },
   "bugs": {
     "url": "https://github.com/tomtdigital/hg-monorepo/issues"

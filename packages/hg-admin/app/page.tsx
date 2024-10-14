@@ -5,7 +5,9 @@ import { Text } from "@hannagrams/ui";
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Text color="yellow">Hello World</Text>
+      <Text color="yellow" fontWeight="bold">
+        Hello World
+      </Text>
       <main className={styles.main}>
         <Image
           className={styles.logo}

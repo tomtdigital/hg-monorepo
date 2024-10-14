@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@hannagrams/ui": "file:../hg-ui",
+    "@hannagrams/ui": "^0.0.0",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18"
