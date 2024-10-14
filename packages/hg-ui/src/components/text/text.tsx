@@ -1,5 +1,9 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
-export default function Text(color: string) {
-  return (<p style={{ color }}>Hi</p>);
+type TextProps = PropsWithChildren<{
+  color: string;
+}>;
+
+export default function Text({ color, children }: TextProps) {
+  return <p style={{ color: color }}>{children}</p>;
 }
