@@ -2,15 +2,19 @@
 0 silly argv   _: [ 'create' ],
 0 silly argv   lernaVersion: '8.1.8',
 0 silly argv   '$0': 'node_modules/lerna/dist/cli.js',
-0 silly argv   name: 'hg-ui'
+0 silly argv   name: 'vite-pg'
 0 silly argv }
 1 notice cli v8.1.8
-2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+2 verbose packageConfigs Package manager "pnpm" detected. Resolving packages using `pnpm-workspace.yaml`.
 3 verbose rootPath /Users/tomdavies/Documents/code/personal/hg-monorepo
 4 info versioning independent
-5 error Error: Command failed with exit code 1: git config --get user.email
-5 error     at makeError (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/execa@5.0.0/node_modules/execa/lib/error.js:59:11)
-5 error     at module.exports.sync (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/execa@5.0.0/node_modules/execa/index.js:186:17)
-5 error     at execSync (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/@lerna+create@8.1.8_typescript@5.6.3/node_modules/@lerna/create/dist/command.js:1505:31)
-5 error     at CreateCommand.gitConfig (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/@lerna+create@8.1.8_typescript@5.6.3/node_modules/@lerna/create/dist/command.js:5481:16)
-5 error     at CreateCommand.initialize (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/@lerna+create@8.1.8_typescript@5.6.3/node_modules/@lerna/create/dist/command.js:5415:51)
+5 error Error: canceled
+5 error     at Interface.<anonymous> (/Users/tomdavies/Documents/code/personal/hg-monorepo/node_modules/.pnpm/read@3.0.1/node_modules/read/dist/commonjs/read.js:89:21)
+5 error     at Interface.emit (node:events:518:28)
+5 error     at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1125:18)
+5 error     at ReadStream.onkeypress (node:internal/readline/interface:264:20)
+5 error     at ReadStream.emit (node:events:518:28)
+5 error     at emitKeys (node:internal/readline/utils:371:14)
+5 error     at emitKeys.next (<anonymous>)
+5 error     at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+5 error     at ReadStream.emit (node:events:518:28)

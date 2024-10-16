@@ -4,8 +4,10 @@
   "scripts": {
     "build-sb": "lerna run build-storybook",
     "build-ui": "lerna run build --scope @hannagrams/ui",
+    "build-vite": "lerna run --scope vite-sandbox build",
     "build-admin": "lerna run build --scope @hannagrams/admin",
     "dev-sb": "lerna run storybook",
+    "dev-vite": "lerna run --scope vite-sandbox dev",
     "dev-admin": "lerna run --scope @hannagrams/admin --scope @hannagrams/ui --parallel dev"
   },
   "dependencies": {},
