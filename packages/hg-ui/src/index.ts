@@ -4,3 +4,4 @@
 
 export * from "./components/preview-link/index";
 export * from "./components/text/index";
+export * from "./components/text-field/index";

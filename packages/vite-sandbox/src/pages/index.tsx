@@ -1,10 +1,23 @@
-import { Link } from "react-router-dom";
-import SvgIcon from "@mui/material/SvgIcon";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+import InputLabel from "@mui/material/InputLabel";
+import SvgIcon from "@mui/material/SvgIcon";
+import TextField, { TextFieldProps } from "@mui/material/TextField";
+import { Link } from "react-router-dom";
+import { StyledTextField, Text } from "@hannagrams/ui";
+
+const Section = styled("section")(({ theme }) => ({
+  backgroundColor: theme.status.danger,
+}));
+
+const MyTextField = styled(TextField)<TextFieldProps>(({ theme }) => ({
+  backgroundColor: theme.status.success,
+}));
 
 function HomePage() {
   return (
-    <div>
+    <Section>
       <h1>
         <DeleteIcon />
         <SvgIcon>
@@ -25,8 +38,15 @@ function HomePage() {
         </SvgIcon>
         Home Page
       </h1>
+      <InputLabel htmlFor="test">
+        Test
+        <MyTextField id="test" label="Outlined" variant="outlined" />
+        <Text color="red">Hey</Text>
+        <StyledTextField id="test" label="Outlined" variant="outlined" />
+      </InputLabel>
       <Link to="/about">Go to About</Link>
-    </div>
+      <Button variant="outlined">Hello world</Button>
+    </Section>
   );
 }
 

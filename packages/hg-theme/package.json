@@ -1,0 +1,30 @@
+{
+  "name": "@hannagrams/theme",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Tom Davies <tom.tdigital@gmail.com>",
+  "homepage": "https://github.com/tomtdigital/hg-monorepo#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomtdigital/hg-monorepo.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "bugs": {
+    "url": "https://github.com/tomtdigital/hg-monorepo/issues"
+  },
+  "dependencies": {
+    "@mui/material": "^6.1.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
