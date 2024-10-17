@@ -9,7 +9,7 @@
     "build-admin": "lerna run build --scope @hannagrams/admin",
     "dev-sb": "lerna run storybook",
     "dev-vite": "lerna run --scope @hannagrams/ui --scope @hannagrams/theme --scope vite-sandbox --parallel dev",
-    "dev-admin": "lerna run --scope @hannagrams/admin --scope @hannagrams/ui --parallel dev"
+    "dev-admin": "lerna run --scope @hannagrams/admin --scope @hannagrams/theme --scope @hannagrams/ui --parallel dev"
   },
   "dependencies": {},
   "devDependencies": {

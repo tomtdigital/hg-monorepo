@@ -1,14 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
-import { PreviewLink, Text } from "@hannagrams/ui";
+import { StyledTextField, Text } from "@hannagrams/ui";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <PreviewLink href="games">Games</PreviewLink>
       <Text color="yellow" fontWeight="bold">
         Hello World
       </Text>
+      <StyledTextField id="text" name="text" label="test" variant="outlined" />
       <main className={styles.main}>
         <Image
           className={styles.logo}

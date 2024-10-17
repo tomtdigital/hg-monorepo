@@ -1,3 +1,5 @@
+"use client";
+
 import { createTheme } from "@mui/material";
 import { green, orange } from "@mui/material/colors";
 
@@ -22,4 +24,8 @@ export const theme = createTheme({
     danger: orange[500],
     success: green[600],
   },
+  typography: {
+    fontFamily: "var(--font-roboto)",
+  },
+  cssVariables: true,
 });
