@@ -1,16 +1,19 @@
 // app/ThemeRegistry.tsx
 "use client";
-import createCache from "@emotion/cache";
+import createCache, { Options } from "@emotion/cache";
 import { useServerInsertedHTML } from "next/navigation";
 import { CacheProvider, ThemeProvider } from "@emotion/react";
 import { theme } from "@hannagrams/theme";
-import { useState } from "react";
+import { PropsWithChildren, useState } from "react";
 
 // This implementation is from emotion-js
 // https://github.com/emotion-js/emotion/issues/2928#issuecomment-1319747902
-export default function ThemeRegistry(props: any) {
-  const { options, children } = props;
+type ThemeRegistryProps = PropsWithChildren<{ options: Options }>;
 
+export default function ThemeRegistry({
+  options,
+  children,
+}: ThemeRegistryProps) {
   const [{ cache, flush }] = useState(() => {
     const cache = createCache(options);
     cache.compat = true;

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
-import "./globals.css";
 import { Roboto } from "next/font/google";
-import ThemeRegistry from "./theme-registry";
+import localFont from "next/font/local";
+import "./globals.css";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -38,9 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable}`}
       >
-        <AppRouterCacheProvider>
-          <ThemeRegistry options={{ key: "mui" }}>{children}</ThemeRegistry>
-        </AppRouterCacheProvider>
+        {children}
       </body>
     </html>
   );

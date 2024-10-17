@@ -1,16 +1,15 @@
-"use client";
+export const dynamic = "force-dynamic";
 
+import { Button } from "@mui/material";
 import Image from "next/image";
+import Test from "./components/test";
 import styles from "./page.module.css";
-import { StyledTextField, Text } from "@hannagrams/ui";
+import ThemeRegistry from "./theme-registry";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Text color="yellow" fontWeight="bold">
-        Hello World
-      </Text>
-      <StyledTextField id="text" name="text" label="test" variant="outlined" />
+      <Button>Hi</Button>
       <main className={styles.main}>
         <Image
           className={styles.logo}
@@ -26,7 +25,10 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
-
+        {/* Theme can only be used for client components */}
+        <ThemeRegistry options={{ key: "mui" }}>
+          <Test />
+        </ThemeRegistry>
         <div className={styles.ctas}>
           <a
             className={styles.primary}
@@ -53,6 +55,7 @@ export default function Home() {
           </a>
         </div>
       </main>
+
       <footer className={styles.footer}>
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
