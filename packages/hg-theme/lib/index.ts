@@ -1,12 +1,13 @@
 "use client";
 
 import { createTheme } from "@mui/material";
-import { green, orange } from "@mui/material/colors";
+import { green, orange, yellow } from "@mui/material/colors";
 
 declare module "@mui/material/styles" {
   interface Theme {
     status: {
       danger: string;
+      warning: string;
       success: string;
     };
   }
@@ -14,6 +15,7 @@ declare module "@mui/material/styles" {
   interface ThemeOptions {
     status?: {
       danger?: string;
+      warning?: string;
       success?: string;
     };
   }
@@ -22,6 +24,7 @@ declare module "@mui/material/styles" {
 export const theme = createTheme({
   status: {
     danger: orange[500],
+    warning: yellow[600],
     success: green[600],
   },
   typography: {

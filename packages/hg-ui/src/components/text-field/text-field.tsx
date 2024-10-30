@@ -7,4 +7,8 @@ export const StyledTextField: FC<TextFieldProps> = styled(
   TextField
 )<TextFieldProps>(({ theme }) => ({
   backgroundColor: theme.status.success,
+  display: "block",
+  div: {
+    width: "100%",
+  },
 }));
