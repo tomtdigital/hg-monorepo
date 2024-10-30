@@ -3,11 +3,9 @@
 import { StyledSelectField, StyledTextField } from "@hannagrams/ui";
 import { Button, MenuItem } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
-
-type TestFormValues = {
-  name: string;
-  employmentStatus: string;
-};
+import { submitTestForm } from "../api/test/actions";
+import { messages } from "../api/test/validation/messages";
+import { employmentSelectOptions } from "../const/employment-select-options";
 
 const defaultValues = {
   name: "",
@@ -22,18 +20,29 @@ export default function TestForm() {
     control,
     register,
     trigger,
+    setError,
     formState: { errors },
   } = useForm({
     defaultValues,
     mode: "all",
   });
-  const onSubmit = (data: TestFormValues) => console.log(data);
+
   const name = watch("name");
+  async function onSubmit(data: TestFormValues) {
+    const response = await submitTestForm(data);
+    if (response.success && response.data) {
+      console.log(response.data);
+    } else if (response.message) {
+      setError("root", { message: response.message });
+    }
+  }
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit((data) => onSubmit(data))}>
       <StyledTextField
         {...register("name", {
-          minLength: { value: 4, message: "Sort your act out" },
+          required: { value: true, message: messages.name.required },
+          minLength: { value: 4, message: messages.name.minLengthFour },
         })}
         onBlur={() => {
           trigger("employmentStatus");
@@ -43,17 +52,23 @@ export default function TestForm() {
       <Controller
         render={({ field }) => (
           <StyledSelectField {...field}>
-            <MenuItem value="e">Employed</MenuItem>
-            <MenuItem value="u">Unemployed</MenuItem>
-            <MenuItem value="se">Self Employed</MenuItem>
+            {employmentSelectOptions.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
           </StyledSelectField>
         )}
         control={control}
         name="employmentStatus"
         rules={{
+          required: {
+            value: true,
+            message: messages.employmentStatus.required,
+          },
           validate: (value: string) => {
             if (name === "Elon Musk" && value !== "se")
-              return "Elon Musk is self employed!";
+              return messages.employmentStatus.validate;
             return true;
           },
         }}
@@ -61,6 +76,7 @@ export default function TestForm() {
       {errors?.employmentStatus?.message && (
         <p>{errors.employmentStatus.message}</p>
       )}
+      {errors?.root?.message && <p>{errors.root.message}</p>}
       <Button
         type="button"
         sx={{ padding: "1em", backgroundColor: "purple" }}
